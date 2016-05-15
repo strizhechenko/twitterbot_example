@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for var in user_access_token user_access_secret consumer_key consumer_secret timeout template reader_name ${reader_name}_access_token ${reader_name}_access_secret $@; do
+	echo heroku config:set $var="${!var}"
+done
